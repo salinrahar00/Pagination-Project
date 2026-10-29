@@ -7,7 +7,6 @@ export default function App() {
 
   const totalPages = 3;
 
-  // Get page number from URL query parameter
   const getPageFromURL = () => {
     const page = Number(searchParams.get("page"));
 
@@ -18,7 +17,6 @@ export default function App() {
 
   const [currentPage, setCurrentPage] = useState(getPageFromURL);
 
-  // Update state when URL changes, including browser Back/Forward
   useEffect(() => {
     const page = getPageFromURL();
 
@@ -34,7 +32,6 @@ export default function App() {
 
     setCurrentPage(page);
 
-    // Update URL query parameter
     setSearchParams({ page: String(page) });
 
     window.scrollTo({
